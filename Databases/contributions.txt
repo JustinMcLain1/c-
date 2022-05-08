@@ -1,0 +1,28 @@
+Justin McLain 
+CSCI 466
+
+
+My contributions fo the group project included bug fixing which was done during and out of
+group meetings where we would typically meet twice or three times a week. I also helped with
+the schema for the database with the entire group. Also group management with deciding meetings
+deciding progression of the project, Assigning rolls, helping with questions etc etc Programming for 
+some of the sign up pages as well.
+
+Gavin: Contributed to the schema, made the song search, sign up functionality which includes
+names, account balance, the free queue and priority queue functions, as well as the song select
+
+Eric: Contributed to the schema, helped with design as well as the SQL and the song selection within
+our database, he also helped to fix some stuff with sign up and contributed ideas as to how it would function
+
+Dale: contributedc to the schema, designed the DJ interface as well as the ascending and decending ordering,
+Helped to also design the functionality for the web page
+
+Fareed: Contributed to the schema, did pretty much all the design for the html/css as well as helping with
+functonality for the sign up page, home page, and searching.
+
+One of the things I learned from this assignment wasn't anything in regarding to coding. If this was a solo
+project it could have easily been done by ones self, I believe the soul purpose of this project was to understand
+group work, and arrangmenet with time management, As thats what is important outside is functionality with a large
+group of people.  
+
+Contructive feedback: none

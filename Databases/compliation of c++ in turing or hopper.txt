@@ -1,0 +1,29 @@
+compliation of c++ in turing or hopper
+
+g++ -c -I/user/include mariadb program.cc 
+  // -c is used to compile without linking 
+
+gcc -c -I/user/including/mariadb program.c
+
+these make object files with .o extension
+
+you must have the header file in the .cc program or .c program
+another reason it doesnt work is there is a syntax erropr in code
+or there is a typo
+
+FOR linking
+
+g++ -o program program.o -lmariadb 
+ // the -o takes the next arugment as the output filename
+
+gcc -o program program.o -lmariadb
+
+linking erros
+
+failed to list one of the object files
+failed to tell the linker to include a library that is needed
+
+linker path does not include the directory your libraary is located in
+header file has a different declaratiuon than what is implemented
+
+./program will run the program

@@ -1,0 +1,20 @@
+1.2) the result from running the SELECT statement is "Empty Set" This is because
+	Transcation allows all the changes made to the statement are temporary until the transcation is over
+
+1.5) The result from the Select statement outputs the data From the input into the Table named Taco
+	it will output the inputted data because the transaction was commited meaning what we entered can now be saved to the database
+ 
+
+2.4) The result from teh select statement outputs the values that were edited prior to it even though we haven't commit it
+	the transaction still shows us what the output will look like to know if we entered in everything correctly
+
+2.5)  THe result from this statement was the output that occured prior to the transaction starting because once again 
+	transaction makes all of the next inputs temporary until they are commited if they are rolled back it will undo 
+	all command inputs made after the start of the transaction.
+
+3) THE program stopped with error 1205, What is happening is, some other thread is holding a record lock on some record
+	 (you're updating every record in the table!) for too long, and your thread is being timed out. And with transaction \
+	they must be atomic trying to do this breaks the atomicness of it because there will no longer be just one value for pk
+	which is the primary key in terms of a transaction this is known as Atomicity which is the idea that either all operations of 
+	the transaction are implemented properly or none are and it also breaks consistency which is that no execution of a transaction in isolation
+	preserves the conistency of the database ***** with no other transaction executing concurrently**** these ar eteh ACID Properties

@@ -1,0 +1,227 @@
+
+                    J E S 2  J O B  L O G  --  S Y S T E M  2 9 6 4  --  N O D E  S V S C J E S 2        
+
+  
+ 23.04.12 JOB01772 ---- MONDAY,    22 MAR 2021 ----
+ 23.04.12 JOB01772  IRR010I  USERID KC03D57  IS ASSIGNED TO THIS JOB.
+ 23.04.12 JOB01772  ICH70001I KC03D57  LAST ACCESS AT 23:03:26 ON MONDAY, MARCH 22, 2021
+ 23.04.12 JOB01772  $HASP373 KC03D57A STARTED - INIT 2    - CLASS A        - SYS 2964
+ 23.04.12 JOB01772  $HASP395 KC03D57A ENDED - RC=0000
+
+ ------ JES2 JOB STATISTICS ------
+
+
+   22 MAR 2021 JOB EXECUTION DATE
+
+
+           145 CARDS READ
+
+
+           199 SYSOUT PRINT RECORDS
+
+
+             0 SYSOUT PUNCH RECORDS
+
+
+            18 SYSOUT SPOOL KBYTES
+
+
+          0.00 MINUTES EXECUTION TIME
+ !! END OF JES SPOOL FILE !!
+        1 //KC03D57A  JOB ,'J.MCLAIN',MSGCLASS=H                                  JOB01772
+        2 //JSTEP01  EXEC PGM=ASSIST                                                      
+        3 //STEPLIB  DD DSN=KC00NIU.ASSIST.LOADLIB,DISP=SHR                               
+        4 //SYSPRINT DD SYSOUT=*                                                          
+        5 //SYSIN    DD *                                                                 
+          //*                                                                             
+          //* THE FOLLOWING IS THE INPUT DATA SET                                         
+          //*                                                                             
+        6 //FT05F001 DD *                                                                 
+          //*                                                                             
+          //* THE FOLLOWING IS THE OUTPUT DATA SET                                        
+          //*                                                                             
+        7 //FT06F001 DD SYSOUT=*                                                          
+          //*                                                                             
+          //* THE FOLLOWING IS THE OUTPUT DATA SET FOR MESSAGES                           
+          //*                                                                             
+        8 //SYSPRINT DD SYSOUT=*                                                          
+        9 //                                                                              
+ !! END OF JES SPOOL FILE !!
+ ICH70001I KC03D57  LAST ACCESS AT 23:03:26 ON MONDAY, MARCH 22, 2021
+ IEFA111I KC03D57A IS USING THE FOLLOWING JOB RELATED SETTINGS:
+          SWA=ABOVE,TIOT SIZE=32K,DSENQSHR=DISALLOW,GDGBIAS=JOB
+ IEF236I ALLOC. FOR KC03D57A JSTEP01
+ IGD103I SMS ALLOCATED TO DDNAME STEPLIB
+ IEF237I JES2 ALLOCATED TO SYSPRINT
+ IEF237I JES2 ALLOCATED TO SYSIN
+ IEF237I JES2 ALLOCATED TO FT05F001
+ IEF237I JES2 ALLOCATED TO FT06F001
+ IEF237I JES2 ALLOCATED TO SYSPRINT
+ IEF142I KC03D57A JSTEP01 - STEP WAS EXECUTED - COND CODE 0000
+ IGD104I KC00NIU.ASSIST.LOADLIB                       RETAINED,  DDNAME=STEPLIB 
+ IEF285I   KC03D57.KC03D57A.JOB01772.D0000103.?         SYSOUT        
+ IEF285I   KC03D57.KC03D57A.JOB01772.D0000101.?         SYSIN         
+ IEF285I   KC03D57.KC03D57A.JOB01772.D0000102.?         SYSIN         
+ IEF285I   KC03D57.KC03D57A.JOB01772.D0000104.?         SYSOUT        
+ IEF285I   KC03D57.KC03D57A.JOB01772.D0000105.?         SYSOUT        
+ IEF373I STEP/JSTEP01 /START 2021081.2304
+ IEF032I STEP/JSTEP01 /STOP  2021081.2304 
+         CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+         VIRT:   584K  SYS:   248K  EXT:        0K  SYS:    12664K
+         ATB- REAL:                  3364K  SLOTS:                     0K
+              VIRT- ALLOC:      13M SHRD:       0M
+ IEF375I  JOB/KC03D57A/START 2021081.2304
+ IEF033I  JOB/KC03D57A/STOP  2021081.2304 
+         CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+ !! END OF JES SPOOL FILE !!
+
+ *** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT            
+
+                                                                                                                                     
+
+                                                                                                                PAGE    1            
+
+   LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+                                       2 ****************************************************************                            
+                                       3 *                                                              *                            
+                                       4 *  CSCI 360-1/PE1         ASSIGNMENT 7            SPRING 2021  *                            
+                                       5 *                                                              *                            
+                                       6 *  PROGRAMMER NAME: JUSTIN MCLAIN                              *                            
+                                       7 *                                                              *                            
+                                       8 *  DATE:  03/29/2021                                           *                            
+                                       9 *                                                              *                            
+                                      10 *  PROGRAM NAME:                                               *                            
+                                      11 *                                                              *                            
+                                      12 *  FUNCTION:                                                   *                            
+                                      13 *                                                              *                            
+                                      14 *  NOTES:                                                      *                            
+                                      15 *                                                              *                            
+                                      16 ****************************************************************                            
+                                      17 *                                                                                           
+ 000000                               18 PAYROLL3  CSECT                                                                             
+ 000000 90EC D00C            0000C    19          STM   14,12,12(13)  SAVE REGS IN CALLER'S SAVE AREA                                
+ 000004 18CF                          20          LR    12,15         COPY CSECT ADDR INTO R12                                       
+ 000000                               21          USING PAYROLL3,12   ESTABLISH R12 AS THE BASE REG                                  
+ 000006 41E0 C0E0            000E0    22          LA    14,PR3SAVE    R14 POINTS TO THIS CSECT'S SAVE AREA                           
+ 00000A 50E0 D008            00008    23          ST    14,8(,13)     STORE ADDR OF THIS CSECT'S SAVE AREA                           
+ 00000E 50D0 E004            00004    24          ST    13,4(,14)     STORE ADDR OF CALLER'S SAVE AREA                               
+ 000012 18DE                          25          LR    13,14         POINT R13 AT THIS CSECT'S SAVE AREA                            
+                                      26 *                                                                                           
+ 000014 E000 C1AE 0050 001AE          27          XREAD BUFFER,80      READ NEXT EMPLOYEE RECORD                                     
+                                      28 *                                                                                           
+ 00001A 4740 C08C            0008C    29 LOOP1    BC    B'0100',ENDLOOP1   BRANCH TO ENDLOOP1 IF EOF                                 
+                                      30 *                                                                                           
+ 00001E 9240 C129      00129          31          MVI   DETAIL1+1,C' '         CLEAR EMPL                                            
+ 000022 D282 C12A C129 0012A 00129    32          MVC   DETAIL1+2(131),DETAIL1+1  DETAIL LINE                                        
+                                      33 *                                                                                           
+ 000028 D218 C129 C1AE 00129 001AE    34          MVC   OEMPNME(25),IEMPNME     MOVE EMPL NAME TO PRNTLNE                            
+ 00002E D204 C147 C1C7 00147 001C7    35          MVC   OEMPID(5),IEMPID        MOVE EMPL ID TO PRNTLNE                              
+                                      36 *                                                                                           
+ 000034 F223 C203 C1CC 00203 001CC    37          PACK  PPAYRATE(3),IPAYRATE(4) PACK ZONED PAY TO PACK                               
+ 00003A F223 C206 C1D0 00206 001D0    38          PACK  PHOURS(3),IHOURS(4)     PACK ZONED HRS TO PACK                               
+ 000040 D206 C150 C0A0 00150 000A0    39          MVC   OHRPAY(7),=X'402021204B2020' DECLARE                                         
+ 000046 DE06 C150 C203 00150 00203    40          ED    OHRPAY(7),PPAYRATE           GO TO PRINT                                     
+ 00004C D206 C15C C0A0 0015C 000A0    41          MVC   OHRWORK(7),=X'402021204B2020' DECLARE                                        
+ 000052 DE06 C15C C206 0015C 00206    42          ED    OHRWORK(7),PHOURS            GO TO PRINT                                     
+                                      43 *                                                                                           
+ 000058 F852 C209 C203 00209 00203    44          ZAP   PPRODUCT(6),PPAYRATE(3) ZERO AND ADD PACKED PAY                              
+ 00005E FC52 C209 C206 00209 00206    45          MP    PPRODUCT(6),PHOURS(3)   MULTIPLY PAY BY HRS                                  
+ 000064 F055 C209 003E 00209 0003E    46          SRP   PPRODUCT(6),(64-2),5    SHIFT left 4 AND ROUND                               
+ 00006A F050 C209 0006 00209 00006    47          SRP   PPRODUCT(6),6,0                                                              
+ 000070 D206 C16D C0A0 0016D 000A0    48          MVC   OTOTPAY(7),=X'402021204B2020' DECLARE                                        
+ 000076 DE06 C16D C209 0016D 00209    49          ED    OTOTPAY(7),PPRODUCT           MOVE TO PRINT                                  
+                                      50 *                                                                                           
+ 00007C E020 C128 0085 00128          51          XPRNT DETAIL1,133             PRINT OUTPUT                                         
+                                      52 *                                                                                           
+                                      53 *                                                                                           
+
+                                                                                                                PAGE    2            
+
+   LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+ 000082 E000 C1AE 0050 001AE          54          XREAD BUFFER,80      READ NEXT EMPLOYEE RECORD                                     
+                                      55 *                                                                                           
+ 000088 47F0 C01A            0001A    56          BC    B'1111',LOOP1  BRANCH TO TOP OF LOOP TO CHECK EOF                            
+                                      57 *                                                                                           
+                                      58 *                                                                                           
+                                      59 *  STANDARD EXIT LINKAGE WITH RC OF 0 RETURNED IN R15                                       
+                                      60 *                                                                                           
+ 00008C 1BFF                          61 ENDLOOP1 SR    15,15        R15 = RETURN CODE OF 0                                          
+ 00008E 58D0 D004            00004    62          L     13,4(,13)    POINT R13 TO CALLER'S SAVE AREA                                 
+ 000092 58E0 D00C            0000C    63          L     14,12(,13)   RESTORE REGISTER 14                                             
+ 000096 980C D014            00014    64          LM    0,12,20(13)  RESTORE R0 THRU R12                                             
+                                      65 *                                                                                           
+ 00009A 07FE                          66          BR    14           RETURN TO CALLER                                                
+                                      67 *                                                                                           
+                                      68          LTORG                                                                              
+ 0000A0 402021204B2020                69                =X'402021204B2020'                                                           
+                                      70 *                                                                                           
+                                      71 * THE FOLLOWING TWO LINES PUTS A LABEL ON YOUR STORAGE ON A                                 
+                                      72 * 32-BYTE BOUNDARY SO THAT YOU CAN FIND IT EASILY IN A DUMP                                 
+                                      73 *                                                                                           
+ 0000C0                               74          ORG   PAYROLL3+((*-PAYROLL3+31)/32)*32                                             
+ 0000C0 5C40D7D9D6C7D9C1              75          DC    C'* PROGRAM STORAGE FOR PAYROLL3 *'                                          
+                                      76 *                                                                                           
+ 0000E0                               77 PR3SAVE  DS    18F          PROGRAM'S REGISTER SAVE AREA                                    
+                                      78 *                                                                                           
+                                      79 *                                                                                           
+ 000128 40                            80 DETAIL1  DC    C' '           CARRIAGE CONTROL CHARACTER                                    
+ 000129                               81 OEMPNME  DS    CL25           OUTPUT EMPL NAME                                              
+ 000142 4040404040                    82          DC    5C' '          DEFINING CONSTANT SPACE BETWEEN VAL                           
+ 000147                               83 OEMPID   DS    CL7            OUTPUT EMPLOYEE ID                                            
+ 00014E 4040                          84          DC    2C' '          double space                                                  
+ 000150                               85 OHRPAY   DS    CL5            OUTPUT EMPL WAGE                                              
+ 000155 40404040404040                86          DC    7C' '          DEFINING CONSTANT SPACE BETWEEN VAL                           
+ 00015C                               87 OHRWORK  DS    CL5            OUTPUT EMPL HOURS WORKED                                      
+ 000161 4040404040404040              88          DC    12C' '                                                                       
+ 00016D                               89 OTOTPAY  DS    CL5            OUTPUT TOTAL EMPL PAY                                         
+ 000172 4040404040404040              90          DC    59C' '                                                                       
+                                      91 *                                                                                           
+ 0001AE                               92 BUFFER   DS    0H             BUFFER FOR REC READ                                           
+ 0001AE                               93 IEMPNME  DS    CL25           INPUT EMPL NAME                                               
+ 0001C7                               94 IEMPID   DS    CL5            INPUT EMPL ID                                                 
+ 0001CC                               95 IPAYRATE DS    ZL4            INPUT HRLY PAY RATE                                           
+ 0001D0                               96 IHOURS   DS    ZL4            INPUT HOURS WORKED                                            
+ 0001D4 4040404040404040              97          DC    47C' '           COUNTS FOR EXTRA                                            
+                                      98 *                                                                                           
+ 000203 00000C                        99 PPAYRATE DC    PL3'0'         PACKED STORAGE FOR PAYRATE                                    
+ 000206 00000C                       100 PHOURS   DC    PL3'0'         PACKED STORAGE FOR HOURS WORKED                               
+ 000209 00000000000C                 101 PPRODUCT DC    PL6'0'         PACKED TOTAL PAY                                              
+                                     102          END   PAYROLL3                                                                     
+
+ ***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS                                                                         
+
+ *** DYNAMIC CORE AREA USED:  LOW:    4656 HIGH:     720 LEAVING:  488192 FREE BYTES. AVERAGE:       52 BYTES/STMT ***               
+
+ *** ASSEMBLY TIME =    0.000 SECS,   103000 STATEMENTS/SEC ***                                                                      
+
+ *** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***                          
+ WOLFGANG AMADEUS MOZART       12345      15.80       25.50           402.90                                                         
+ RICHARD STRAUSS               23456      19.80        0.01             0.20                                                         
+ AMY BEACH                     22132      10.80       31.20           336.96                                                         
+
+ DAME ETHEL SMYTHE             65465      22.80       15.90           362.52                                                         
+ PETER ILYICH TCHAIKOVSKY      44560      23.28       34.07           793.15                                                         
+ ANTON BRUCKNER                99870      22.80       21.00           478.80                                                         
+ LUDWIG VAN BEETHOVEN          13345      15.80       25.50           402.90                                                         
+ JOHANNES BRAHMS               24456      19.80        0.01             0.20                                                         
+ BELA BARTOK                   22532      10.80       31.20           336.96                                                         
+ MAX REGER                     11465      22.80       15.90           362.52                                                         
+ SAMUEL BARBER                 13360      23.28       34.07           793.15                                                         
+ GIUSEPPE VERDI                99873      22.80       21.00           478.80                                                         
+ JOHANN SEBASTIAN BACH         12342      15.80       25.50           402.90                                                         
+ JOSEPH HAYDN                  23452      19.80        0.01             0.20                                                         
+ GEORG FRIEDRICH HANDEL        22131      10.80       31.20           336.96                                                         
+ NIKOLAI RIMSKY-KORSAKOV       44378      23.28       34.07           793.15                                                         
+ EDWARD ELGAR                  65411      22.80       15.90           362.52                                                         
+ CLAUDE DEBUSSY                99855      22.80       21.00           478.80                                                         
+ ANTONIN DVORAK                13346      15.80       25.50           402.90                                                         
+ THOMAS TALLIS                 24457      19.80        0.01             0.20                                                         
+ RALPH VAUGHAN WILLIAMS        22538      10.80       31.20           336.96                                                         
+ RICHARD WAGNER                11477      22.80       15.90           362.52                                                         
+ FREDERIC CHOPIN               17777      23.28       34.07           793.15                                                         
+ JOAN TOWER                    99211      22.80       21.00           478.80                                                         
+
+ *** EXECUTION TIME =    0.000 SECS.       493 INSTRUCTIONS EXECUTED -   493000 INSTRUCTIONS/SEC ***                                 
+
+ *** AM004 - NORMAL USER TERMINATION BY RETURN ***                                                                                   
+ !! END OF JES SPOOL FILE !!
